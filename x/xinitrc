@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# 解决部分软件图形界面打开缓慢问题
+exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY &
+
+# 默认终端
+export SHEll="/bin/zsh"
+# 默认输入法框架
+export XMODIFIERS="@im=fcitx"
+
+# 输入法
+fcitx &
+
+# 通知中心
+dunst &
+
+# 显示设置
+bash ~/space/scripts/display/display_init.sh
+
+# 壁纸
+bash ~/space/scripts/switch_bg_img.sh
+
+# 混成器（动画）
+picom &
+
+# 状态栏
+dwmblocks &
+
+# 启动dwm
+exec dwm

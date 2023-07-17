@@ -1,0 +1,9 @@
+[submodule "dwm"]
+	path = dwm
+	url = https://github.com/follow1123/dwm.git
+[submodule "st"]
+	path = st
+	url = https://github.com/follow1123/st.git
+[submodule "dwmblocks-async"]
+	path = dwmblocks-async
+	url = https://github.com/follow1123/dwmblocks-async.git
