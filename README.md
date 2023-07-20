@@ -12,9 +12,29 @@
 * feh (壁纸)
 * fcitx (输入法)
 * fonts-wqy-microhei (中文字体)
+* playerctl (媒体工具)
 ```bash
-sudo apt install dunst picom rofi libnotify-bin trayer feh nemo fcitx fcitx-pinyin fonts-wqy-microhei
+sudo apt install dunst picom rofi libnotify-bin trayer feh nemo fcitx fcitx-pinyin fonts-wqy-microhei alsa-utils pulseaudio-utils playerctl
 ```
+* 蓝牙相关
+    ```bash
+    sudo apt install alsa-utils bluez pipewire pipewire-pulse
+
+    # 禁用pulseaudio
+    systemctl --user stop pulseaudio.socket
+    systemctl --user stop pulseaudio.service
+    systemctl --user disable pulseaudio.socket
+    systemctl --user disable pulseaudio.service
+    systemctl --user mask pulseaudio
+
+    # 启用 pipewire
+    systemctl --user enable pipewire
+    systemctl --user start pipewire
+    systemctl --user enable pipewire-pulse
+    systemctl --user start pipewire-pulse
+
+    # 重启
+    ```
 ## 安装nerdfont字体
 ```bash
 # 下载字体压缩包

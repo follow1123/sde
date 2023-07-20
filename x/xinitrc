@@ -3,8 +3,9 @@
 # 解决部分软件图形界面打开缓慢问题
 exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY &
 
-# 默认终端
-export SHEll="/bin/zsh"
+# 认证弹框
+/usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 > /dev/null &
+
 # 默认输入法框架
 export XMODIFIERS="@im=fcitx"
 
@@ -18,7 +19,7 @@ dunst &
 bash ~/space/scripts/display/display_init.sh
 
 # 壁纸
-bash ~/space/scripts/switch_bg_img.sh
+bash ~/space/scripts/wallpaper/switch_bg_img.sh
 
 # 混成器（动画）
 picom &
