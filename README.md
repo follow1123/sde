@@ -13,8 +13,11 @@
 * fcitx (输入法)
 * fonts-wqy-microhei (中文字体)
 * playerctl (媒体工具)
+* polkit-kde-agent-1 (认证弹框)
+* pipewire-audio-client-libraries libspa-0.2-bluetooth libspa-0.2-jack wireplumber (音频服务相关)
 ```bash
-sudo apt install dunst picom rofi libnotify-bin trayer feh nemo fcitx fcitx-pinyin fonts-wqy-microhei alsa-utils pulseaudio-utils playerctl
+sudo apt install dunst picom rofi libnotify-bin trayer feh nemo fcitx fcitx-pinyin fonts-wqy-microhei alsa-utils pulseaudio-utils playerctl polkit-kde-agent-1
+sudo apt install pipewire-audio-client-libraries libspa-0.2-bluetooth libspa-0.2-jack wireplumber
 ```
 * 蓝牙相关
     ```bash
