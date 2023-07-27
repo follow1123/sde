@@ -2,6 +2,7 @@
 
 ## 安装依赖
 * `apt install libx11-dev libxft-dev libxinerama-dev xorg make gcc`
+* `apt install libgtk-3-dev libgcr-3-dev libwebkit2gtk-4.0-dev`
 * 下载子模块：`git submodule update --init`
 ## 安装桌面环境相关工具
 * picom (窗口渲染器)
@@ -58,6 +59,7 @@ sudo mkfontdir
 sudo fc-cache -fv
 ```
 ## 安装suckless系列软件
+* 克隆surf代码`git clone https://git.suckless.org/surf`
 * 依次进入 dwm、dwmblocks-async、st文件夹执行：`sudo make clean install`
 ## 关联配置文件
 ```bash
