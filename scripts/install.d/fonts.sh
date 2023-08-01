@@ -18,19 +18,19 @@ fi
 function install(){
 	echo "开始安装字体"
 	# 安装中文字体
-	sudo apt install fonts-wqy-microhei -y
+	sudo apt install fonts-wqy-microhei unzip -y
 	# 下载字体文件
 	wget -P $DOWNLOADS_DIR https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraMono.zip
 	wget -P $DOWNLOADS_DIR https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip
 	wget -P $DOWNLOADS_DIR https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/NerdFontsSymbolsOnly.zip
 	wget -P $DOWNLOADS_DIR https://download.jetbrains.com/fonts/JetBrainsMono-2.304.zip
 	# 解压字体文件
-	sudo unzip FiraMono -d $FONTS_HOME/FiraMono
-	sudo unzip JetBrainsMono -d $FONTS_HOME/JetBrainsMono
-	sudo unzip NerdFontsSymbolsOnly -d $FONTS_HOME/NerdFontsSymbolsOnly
+	sudo unzip $DOWNLOADS_DIR/FiraMono.zip -d $FONTS_HOME/FiraMono
+	sudo unzip $DOWNLOADS_DIR/JetBrainsMono.zip -d $FONTS_HOME/JetBrainsMon
+	sudo unzip $DOWNLOADS_DIR/NerdFontsSymbolsOnly.zip -d $FONTS_HOME/NerdFontsSymbolsOnly
 	local jbfont=$DOWNLOADS_DIR/fonts
-	unzip JetBrainsMono-2.304.zip -d $DOWNLOADS_DIR/fonts
-	sudo mv $DOWNLOADS_DIR/fonts/fonts/* $FONTS_HOME
+	unzip JetBrainsMono-2.304.zip -d $jbfont
+	sudo mv $jbfont/fonts/* $FONTS_HOME
 	# 刷新字体文件
 	cd $FONTS_HOME
 	sudo mkfontscale

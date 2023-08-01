@@ -10,7 +10,7 @@ exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPL
 export XMODIFIERS="@im=fcitx"
 
 # 输入法
-fcitx &
+fcitx5 &
 
 # 通知中心
 dunst &

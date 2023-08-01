@@ -18,13 +18,18 @@ fi
 
 function libraries(){
 	echo "开始安装通知服务依赖库"
+	sudo apt install libnotify-dev libxss-dev -y
 	sudo apt install libnotify-bin -y
 }
 
 # 安装软件
 function install(){
 	echo "开始安装dunst"
-	sudo apt install dunst -y
+	cd $HOME/space/soft && \
+	git clone https://github.com/dunst-project/dunst.git && \
+	cd dunst && \
+	make WAYLAND=0 && \
+	sudo make install
 }
 
 function config(){
