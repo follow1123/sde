@@ -27,5 +27,8 @@ picom &
 # 状态栏
 dwmblocks &
 
+# 默认键盘配置
+bash ~/space/scripts/keyboard/default_keyboard_opts.sh
+
 # 启动dwm
 exec dwm
