@@ -7,7 +7,7 @@ case "$1" in
 	# 系统恢复后执行
     post)
 		# 设置默认按键速率等
-		bash /home/yf/space/scripts/keyboard/default_keyboard_opts.sh
+		bash /home/yf/sde/scripts/keyboard/default_keyboard_opts.sh
 	;;
 esac
 

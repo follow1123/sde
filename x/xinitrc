@@ -6,9 +6,17 @@ exec dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPL
 # 认证弹框
 /usr/lib/x86_64-linux-gnu/libexec/polkit-kde-authentication-agent-1 > /dev/null &
 
+#---------------------------环境变量
 # 默认输入法框架
 export XMODIFIERS="@im=fcitx"
 
+# dwm相关脚本路径
+export SDE_SCRIPTS=~/sde/scripts
+export DWM_SCRIPTS=~/sde/scripts/dwm
+export DWM_BK_SCRIPTS=~/sde/scripts/dwm/blocks
+
+
+#---------------------------启动程序
 # 输入法
 fcitx5 &
 
@@ -16,10 +24,10 @@ fcitx5 &
 dunst &
 
 # 显示设置
-bash ~/space/scripts/display/display_init.sh
+bash ~/sde/scripts/display/display_init.sh
 
 # 壁纸
-bash ~/space/scripts/wallpaper/switch_bg_img.sh
+bash ~/sde/scripts/switch_wallpapers.sh
 
 # 混成器（动画）
 picom &
@@ -28,7 +36,8 @@ picom &
 dwmblocks &
 
 # 默认键盘配置
-bash ~/space/scripts/keyboard/default_keyboard_opts.sh
+bash ~/sde/scripts/keyboard/default_keyboard_opts.sh
 
+#---------------------------启动dwm
 # 启动dwm
 exec dwm
