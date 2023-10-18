@@ -64,12 +64,15 @@ ln -s ~/sde/dunst ~/.config
 sudo apt install fcitx5 fcitx5-chinese-addons im-config -y
 
 # 配置
-ln -s ~/sde/fcitx5 ~/.config
+ln -s ~/sde/fcitx5/config_ ~/.config/fcitx5
+ln -s ~/sde/fcitx5/themes_/* ~/.local/share/fcitx5/themes
 ```
 
 ## rofi
 
 > 应用启动器 [github](https://github.com/davatorium/rofi)
+
+> 主题部分参考 [github](https://github.com/adi1090x/rofi)
 
 ```bash
 # 依赖
@@ -88,7 +91,7 @@ mkdir -p build && cd build
 make && sudo make install
 
 # 配置
-ln -s ~/sde/rofi/files ~/.config/rofi
+ln -s ~/sde/rofi ~/.config
 ```
 
 ## picom
@@ -96,8 +99,14 @@ ln -s ~/sde/rofi/files ~/.config/rofi
 > 窗口渲染器
 
 ```bash
+# 依赖
+sudo apt install libconfig-dev libdbus-1-dev libegl-dev libev-dev libgl-dev libpcre2-dev libpixman-1-dev libx11-xcb-dev libxcb1-dev libxcb-composite0-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-glx0-dev libxcb-image0-dev libxcb-present-dev libxcb-randr0-dev libxcb-render0-dev libxcb-render-util0-dev libxcb-shape0-dev libxcb-util-dev libxcb-xfixes0-dev libxext-dev meson ninja-build uthash-dev -y
 # 安装
-sudo apt install picom -y
+cd ~/space/soft
+git clone https://github.com/yshui/picom.git -b 10.2
+cd picom
+meson setup --buildtype=release build
+ninja -C build install
 
 # 配置
 ln -s ~/sde/picom/picom.conf ~/.config/picom.conf
