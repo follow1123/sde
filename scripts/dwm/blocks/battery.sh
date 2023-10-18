@@ -36,7 +36,7 @@ function get_battery_status(){
 
 function defalut_event(){
 	battery_level=$(get_battery_level)
-	if [ $battery_level -ge 60 ] && [ "$(is_show)" = "0" ]; then
+	if [ $battery_level -ge 60 ] && [ -z "$BLOCK_SHOW_ALL" ]; then
 		print_empty
 		exit
 	fi
@@ -63,3 +63,5 @@ case $BLOCK_BUTTON in
 esac
 
 defalut_event
+
+# printf "%s" "===$BLOCK_SHOW_ALL"

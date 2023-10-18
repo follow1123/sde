@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source ~/.env
-
 source "$DWM_BK_SCRIPTS/util.sh"
 
 case $BLOCK_BUTTON in

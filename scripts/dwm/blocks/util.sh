@@ -19,21 +19,6 @@ function edit_script(){
 	nohup "$(get_terminal)" -e "$(get_editor)" "$0" > /dev/null &
 }
 
-# 判断是否显示图标
-function is_show(){
-	get_value show_all
-}
-
-# 设置显示图标
-function show(){
-	set_value show_all 1
-}
-
-# 设置隐藏图标
-function hide(){
-	set_value show_all 0
-}
-
 # 获取编辑使用的终端
 function get_terminal(){
 	get_value terminal

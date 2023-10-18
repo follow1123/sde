@@ -37,7 +37,7 @@ function defalut_event(){
 			printf "%s" "$icon_power_on"
 		fi
 	else
-		if [ "$(is_show)" = "0" ]; then
+		if [ -z "$BLOCK_SHOW_ALL" ]; then
 			print_empty
 			exit
 		fi
@@ -81,7 +81,7 @@ case  $BLOCK_BUTTON in
 	2)
 		if [ "$(is_powered)" -eq 1 ]; then 
 			power_off
-			if [ "$(is_show)" = "0" ]; then
+			if [ -z "$BLOCK_SHOW_ALL" ]; then
 				print_empty
 				exit
 			fi

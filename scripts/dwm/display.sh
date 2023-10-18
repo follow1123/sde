@@ -44,7 +44,7 @@ declare -A event_map=(
 	["connent to external"]="connect_external"
 )
 
-event_name=$(printf "%s\n" "${!event_map[@]}" | rofi -dmenu)
+event_name=$(printf "%s\n" "${!event_map[@]}" | rofi -dmenu -window-title 'Screens' -no-show-icons)
 if [ -n "$event_name" ];then
 	tar_event=${event_map[$event_name]}
 	$tar_event
