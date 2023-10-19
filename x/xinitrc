@@ -40,4 +40,5 @@ bash ~/sde/scripts/keyboard/default_keyboard_opts.sh
 
 #---------------------------启动dwm
 # 启动dwm
+# exec dwm > ~/space/tmp/dwm_log.txt 2>&1
 exec dwm
